@@ -22,7 +22,7 @@ export default function Post({ post }) {
             <title>{post.title} | Ignews</title>
         </Head>
 
-        <main className={styles.container}>
+        <main className={styles.container }>
             <article className={styles.post}>
                 <h1>{post.title }</h1>
                 <time>{post.updatedAt}</time>
@@ -39,9 +39,15 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
     const session = await getSession({ req })
     const { slug } = params;
 
-    // if (!session) {
-    
-    // }
+    console.log(session)
+    if (!session.activeSubscription) {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            }
+        }
+    } 
 
     const prismic = getPrismicClient(req)
 
