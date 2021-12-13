@@ -11,11 +11,11 @@ interface PostProps {
         slug: string;
         title: string;
         content: string;
-        updated: string;
+        updatedAt: string;
     }
 }
 
-export default function Post({ post }) {
+export default function Post({ post }: PostProps) {
     return (
         <>
         <Head>
@@ -40,7 +40,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
     const { slug } = params;
 
     console.log(session)
-    if (!session.activeSubscription) {
+    if (!session?.activeSubscription) {
         return {
             redirect: {
                 destination: '/',
