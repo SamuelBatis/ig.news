@@ -24,22 +24,17 @@ As postagens são feitas pelo painel do Prismic CMS e integradas diretamente pel
 
 ## :checkered_flag: Começando
 
-<code> 
+```bash
 # Clone this project
 $ git clone https://github.com/SamuelBatis/ig.news.git
-
 # Access
 $ cd ignews
-
 # Install dependencies
 $ yarn install
-
 # Run the project
 $ yarn dev
-
 # The server will initialize in the <http://localhost:3000>
-</code>
-
+```
 
 ## :framed_picture: Imagens
 
